@@ -2,7 +2,7 @@
 
 PURPLE='0;35'
 NC='\033[0m'
-VERSAO=11
+VERSAO=17
 
 echo "$(tput setaf 10)[Bot assistant]:$(tput setaf 7) Olá Aluno, serei seu assistente para instalação do Java!;"
 echo "$(tput setaf 10)[Bot assistant]:$(tput setaf 7)  Verificando aqui se você possui o Java instalado...;"
@@ -26,9 +26,10 @@ else
 		sudo apt update -y
 		clear
 
-		if [ $VERSAO -eq 17]; then
-			echo "$(tput setaf 10)[Bot assistant]:$(tput setaf 7) Preparando para instalar a versão 11 do Java. Confirme a instalação quando solicitado ;D"
-			sudo apt install openjdk-17-jdk -y
+		if [ $VERSAO -eq 17 ]; then
+			echo "$(tput setaf 10)[Bot assistant]:$(tput setaf 7) Preparando para instalar a versão 17 do Java. Confirme a instalação quando solicitado ;D"
+			sudo apt install openjdk-17-jdk
+			-y
 			clear
 			echo "$(tput setaf 10)[Bot assistant]:$(tput setaf 7) Java instalado com sucesso!"
 		fi
@@ -54,6 +55,8 @@ else
 	clear
 	echo "$(tput setaf 10)[Bot assistant]:$(tput setaf 7) Preparando para instalar o Docker."
 	sudo apt install docker.io
+	sleep 10
+	sudo systemctl start docker
 	sudo systemctl enable docker
 	clear
 	echo "$(tput setaf 10)[Bot assistant]:$(tput setaf 7) Docker instalado com sucesso!"
@@ -70,17 +73,16 @@ echo "$(tput setaf 10)[Bot assistant]:$(tput setaf 7) Digite 1 para instação c
 
 read tipo
 
-if [ \"$tipo\" == \"1\" ]; 
-	then
-		echo "$(tput setaf 10)[Bot assistant]:$(tput setaf 7)  Ok! Você escolheu instalar com interface gráfica ;D"
-		echo "$(tput setaf 10)[Bot assistant]:$(tput setaf 7) Baixando o executavel....."
-		wget https://github.com/CashTec/CashTechExecutavel/raw/main/cashtech-jar-gui.jar
-		jar=./cashtech-jar-gui.jar
-	else
-		echo "$(tput setaf 10)[Bot assistant]:$(tput setaf 7)  Ok! Você escolheu instalar com command line ;D"
-		echo "$(tput setaf 10)[Bot assistant]:$(tput setaf 7) Baixando o executavel....."
-		wget https://github.com/CashTec/CashTechExecutavel/raw/main/cashtech-jar-cli.jar
-		jar=./cashtech-jar-cli.jar
+if [ \"$tipo\" == \"1\" ]; then
+	echo "$(tput setaf 10)[Bot assistant]:$(tput setaf 7)  Ok! Você escolheu instalar com interface gráfica ;D"
+	echo "$(tput setaf 10)[Bot assistant]:$(tput setaf 7) Baixando o executavel....."
+	wget https://github.com/CashTec/CashTechExecutavel/raw/main/cashtech-jar-gui.jar
+	jar='./cashtech-jar-gui.jar'
+else
+	echo "$(tput setaf 10)[Bot assistant]:$(tput setaf 7)  Ok! Você escolheu instalar com command line ;D"
+	echo "$(tput setaf 10)[Bot assistant]:$(tput setaf 7) Baixando o executavel....."
+	wget https://github.com/CashTec/CashTechExecutavel/raw/main/cashtech-jar-cli.jar
+	jar='./cashtech-jar-cli.jar'
 fi
 
 echo "$(tput setaf 10)[Bot assistant]:$(tput setaf 7) Iniciando a execução da aplicação"
