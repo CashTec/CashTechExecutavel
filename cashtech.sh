@@ -16,20 +16,20 @@ else
 	echo "$(tput setaf 10)[Bot assistant]:$(tput setaf 7)  Opa! Não identifiquei nenhuma versão do Docker, irei resolver isso agora!"
 	echo "$(tput setaf 10)[Bot assistant]:$(tput setaf 7)  Ok! começando processo de instalação"
 	sleep 2
-	clear
 	echo "$(tput setaf 10)[Bot assistant]:$(tput setaf 7)  Atualizando! Quase lá."
 	sleep 2
 	sudo apt update -y
-	clear
 	echo "$(tput setaf 10)[Bot assistant]:$(tput setaf 7) Preparando para instalar o Docker."
+	sleep 2
 	sudo apt install docker.io
-	echo "$(tput setaf 10)[Bot assistant]:$(tput setaf 7)  Ativando 0 serviço..."
+	echo "$(tput setaf 10)[Bot assistant]:$(tput setaf 7)  Ativando o serviço..."
 	sleep 2
 	sudo systemctl start docker
 	echo "$(tput setaf 10)[Bot assistant]:$(tput setaf 7)  Habilitando o serviço..." 
 	sudo systemctl enable docker
 	clear
 	echo "$(tput setaf 10)[Bot assistant]:$(tput setaf 7) Docker instalado com sucesso!"
+	sleep 2
 fi
 
 echo "$(tput setaf 10)[Bot assistant]:$(tput setaf 7)  Criando ambiente para execução do projeto"
@@ -38,6 +38,7 @@ sudo docker pull pedrorocs/cash_tech
 echo "$(tput setaf 10)[Bot assistant]:$(tput setaf 7) Criando container do banco de dados da aplicação"
 sudo docker run -d -p 3306:3306 --name ContainerCashtechBd pedrorocs/cash_tech
 echo "$(tput setaf 10)[Bot assistant]:$(tput setaf 7) A instalação foi concluida com sucesso!"
+sleep 2
 clear
 
 echo "$(tput setaf 10)[Bot assistant]:$(tput setaf 7) Digite 1 para instação com interface gráfica e 2 para command line!"
