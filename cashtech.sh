@@ -42,7 +42,7 @@ clear
 
 echo "$(tput setaf 10)[Bot assistant]:$(tput setaf 7) Digite 1 para instação com interface gráfica e 2 para command line!"
 
-sudo find -name '*cashtech*' -delete
+sudo find -name '*jar*' -delete
 
 read tipo
 
