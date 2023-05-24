@@ -28,7 +28,6 @@ else
 	echo "$(tput setaf 10)[Bot assistant]:$(tput setaf 7)  Habilitando o serviço..." 
 	sudo systemctl enable docker
 	sleep 2
-	clear
 	echo "$(tput setaf 10)[Bot assistant]:$(tput setaf 7) Docker instalado com sucesso!"
 	sleep 2
 fi
@@ -40,7 +39,6 @@ echo "$(tput setaf 10)[Bot assistant]:$(tput setaf 7) Criando container do banco
 sudo docker run -d -p 3306:3306 --name ContainerCashtechBd pedrorocs/cash_tech
 echo "$(tput setaf 10)[Bot assistant]:$(tput setaf 7) A instalação foi concluida com sucesso!"
 sleep 2
-clear
 
 echo "$(tput setaf 10)[Bot assistant]:$(tput setaf 7) Digite 1 para instação com interface gráfica e 2 para command line!"
 
@@ -91,6 +89,5 @@ else
 	sudo docker pull murilosbarbosa/cashtech-cli
 	echo "$(tput setaf 10)[Bot assistant]:$(tput setaf 7) Iniciando a execução da aplicação"
 	sleep 2
-	clear
 	sudo docker run -it --name ContainerCashTech -p 8080:8080 murilosbarbosa/cashtech-cli
 fi
