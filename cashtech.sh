@@ -63,7 +63,6 @@ if [ \"$tipo\" == \"1\" ]; then
 			echo "$(tput setaf 10)[Bot assistant]:$(tput setaf 7)  Adicionando o repositório!"
 			sleep 2
 			sudo add-apt-repository ppa:webupd8team/java -y
-			clear
 			echo "$(tput setaf 10)[Bot assistant]:$(tput setaf 7)  Atualizando! Quase lá."
 			sleep 2
 			sudo apt update -y
