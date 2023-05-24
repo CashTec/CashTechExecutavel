@@ -27,6 +27,7 @@ else
 	sudo systemctl start docker
 	echo "$(tput setaf 10)[Bot assistant]:$(tput setaf 7)  Habilitando o serviço..." 
 	sudo systemctl enable docker
+	sleep 2
 	clear
 	echo "$(tput setaf 10)[Bot assistant]:$(tput setaf 7) Docker instalado com sucesso!"
 	sleep 2
