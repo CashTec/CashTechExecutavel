@@ -37,7 +37,7 @@ sudo docker network create cashtechnetwork
 echo "$(tput setaf 10)[Bot assistant]:$(tput setaf 7)  Baixando imagem do banco de dados no DockerHub..."
 sudo docker pull pedrorocs/cash_tech
 echo "$(tput setaf 10)[Bot assistant]:$(tput setaf 7) Criando container do banco de dados da aplicação"
-sudo docker run -d -p 3306:3306 --network cashtechnetwork --name ContainerCashtechBd pedrorocs/cash_tech
+sudo docker run -d -p 3306:3306 --network cashtechnetwork --name cashtech-bd pedrorocs/cash_tech
 echo "$(tput setaf 10)[Bot assistant]:$(tput setaf 7) A instalação foi concluida com sucesso!"
 sleep 2
 
@@ -90,5 +90,5 @@ else
 	sudo docker pull murilosbarbosa/cashtech-cli
 	echo "$(tput setaf 10)[Bot assistant]:$(tput setaf 7) Iniciando a execução da aplicação"
 	sleep 2
-	sudo docker run -it --name ContainerCashTech --network cashtechnetwork -p 8080:8080 murilosbarbosa/cashtech-cli
+	sudo docker run -it --name cashtechapp --network cashtechnetwork -p 8080:8080 murilosbarbosa/cashtech-cli
 fi
