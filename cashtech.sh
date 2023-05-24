@@ -22,7 +22,12 @@ else
 	sudo apt update -y
 	clear
 	echo "$(tput setaf 10)[Bot assistant]:$(tput setaf 7) Preparando para instalar o Docker."
-	sudo apt install docker.io && sudo systemctl start docker && sudo systemctl enable docker
+	sudo apt install docker.io
+	echo "$(tput setaf 10)[Bot assistant]:$(tput setaf 7)  Ativando 0 serviço..."
+	sleep 2
+	sudo systemctl start docker
+	echo "$(tput setaf 10)[Bot assistant]:$(tput setaf 7)  Habilitando o serviço..." 
+	sudo systemctl enable docker
 	clear
 	echo "$(tput setaf 10)[Bot assistant]:$(tput setaf 7) Docker instalado com sucesso!"
 fi
