@@ -54,10 +54,7 @@ else
 	sudo apt update -y
 	clear
 	echo "$(tput setaf 10)[Bot assistant]:$(tput setaf 7) Preparando para instalar o Docker."
-	sudo apt install docker.io
-	sleep 10
-	sudo systemctl start docker
-	sudo systemctl enable docker
+	sudo apt install docker.io && sudo systemctl start docker && sudo systemctl enable docker
 	clear
 	echo "$(tput setaf 10)[Bot assistant]:$(tput setaf 7) Docker instalado com sucesso!"
 fi
@@ -66,10 +63,12 @@ echo "$(tput setaf 10)[Bot assistant]:$(tput setaf 7)  Criando ambiente para exe
 echo "$(tput setaf 10)[Bot assistant]:$(tput setaf 7)  Baixando imagem do DockerHub..."
 sudo docker pull pedrorocs/cash_tech
 echo "$(tput setaf 10)[Bot assistant]:$(tput setaf 7) Criando container da aplicação"
-sudo docker run -d -p 3306:3306 --name container-cashtech pedrorocs/cash_tech
+sudo docker run -d -p 3306:3306 --name ContainerCashtechBd pedrorocs/cash_tech
 echo "$(tput setaf 10)[Bot assistant]:$(tput setaf 7) A instalação foi concluida com sucesso!"
 clear
 echo "$(tput setaf 10)[Bot assistant]:$(tput setaf 7) Digite 1 para instação com interface gráfica e 2 para command line!"
+
+sudo find -name '*cashtech*' -delete
 
 read tipo
 
@@ -77,13 +76,11 @@ if [ \"$tipo\" == \"1\" ]; then
 	echo "$(tput setaf 10)[Bot assistant]:$(tput setaf 7)  Ok! Você escolheu instalar com interface gráfica ;D"
 	echo "$(tput setaf 10)[Bot assistant]:$(tput setaf 7) Baixando o executavel....."
 	wget https://github.com/CashTec/CashTechExecutavel/raw/main/cashtech-jar-gui.jar
-	jar='./cashtech-jar-gui.jar'
+	echo "$(tput setaf 10)[Bot assistant]:$(tput setaf 7) Iniciando a execução da aplicação"
+	java -jar cashtech-jar-gui.jar
 else
 	echo "$(tput setaf 10)[Bot assistant]:$(tput setaf 7)  Ok! Você escolheu instalar com command line ;D"
 	echo "$(tput setaf 10)[Bot assistant]:$(tput setaf 7) Baixando o executavel....."
-	wget https://github.com/CashTec/CashTechExecutavel/raw/main/cashtech-jar-cli.jar
-	jar='./cashtech-jar-cli.jar'
+	sudo docker pull murilosbarbosa/cashtech-cli
+	sudo docker run -it --name ContainerCashTech -p 8080:8080 murilosbarbosa/cashtech-cli 
 fi
-
-echo "$(tput setaf 10)[Bot assistant]:$(tput setaf 7) Iniciando a execução da aplicação"
-java -jar $jar
