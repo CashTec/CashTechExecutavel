@@ -36,7 +36,7 @@ echo "$(tput setaf 10)[Bot assistant]:$(tput setaf 7)  Criando ambiente para exe
 echo "$(tput setaf 10)[Bot assistant]:$(tput setaf 7)  Baixando imagem do banco de dados no DockerHub..."
 sudo docker pull pedrorocs/cash_tech
 echo "$(tput setaf 10)[Bot assistant]:$(tput setaf 7) Criando container do banco de dados da aplicação"
-sudo docker run -d -p 3306:3306 --name ContainerCashtechBd pedrorocs/cash_tech
+sudo docker run -d -p 3306:3306 --network bridge --name ContainerCashtechBd pedrorocs/cash_tech
 echo "$(tput setaf 10)[Bot assistant]:$(tput setaf 7) A instalação foi concluida com sucesso!"
 sleep 2
 
@@ -72,7 +72,7 @@ if [ \"$tipo\" == \"1\" ]; then
 				echo "$(tput setaf 10)[Bot assistant]:$(tput setaf 7) Preparando para instalar a versão 17 do Java. Confirme a instalação quando solicitado ;D"
 				sudo apt install openjdk-17-jdk
 				-y
-				clear
+				clear	
 				echo "$(tput setaf 10)[Bot assistant]:$(tput setaf 7) Java instalado com sucesso!"
 			fi
 		else
