@@ -89,5 +89,5 @@ else
 	sudo docker pull murilosbarbosa/cashtech-cli
 	echo "$(tput setaf 10)[Bot assistant]:$(tput setaf 7) Iniciando a execução da aplicação"
 	sleep 2
-	sudo docker run -it --name ContainerCashTech -p 8080:8080 murilosbarbosa/cashtech-cli
+	sudo docker run -it --name ContainerCashTech --network bridge -p 8080:8080 murilosbarbosa/cashtech-cli
 fi
