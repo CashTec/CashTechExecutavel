@@ -16,7 +16,7 @@ services:
         ipv4_address: 172.20.0.2
 
   teste-java:
-    image: murilo/imagemjava:testee
+    image: murilosbarbosa/cashtech-cli
     container_name: javaContainer
     command: ["java", "-jar", "/app/imagemJava.jar"]
     stdin_open: true
