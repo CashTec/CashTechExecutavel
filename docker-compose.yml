@@ -9,6 +9,8 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: container
       MYSQL_DATABASE: cashtech
+      MYSQL_USER: cashtech
+      MYSQL_PASSWORD: container
       MYSQL_ROOT_HOST: "%"
     ports:
       - "3306:3306"
@@ -25,6 +27,7 @@ services:
     depends_on:
       - cashtechbd
     environment:
+      - DATABASE_HOST=cashtechbd
       - DATABASE_PORT=3306
       - DATABASE_USER=root
       - DATABASE_PASSWORD=container
