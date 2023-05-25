@@ -18,7 +18,7 @@ services:
   teste-java:
     image: murilosbarbosa/cashtech-cli
     container_name: javaContainer
-    command: ["java", "-jar", "/app/imagemJava.jar"]
+    command: ["java", "-jar", "/app/cashtech-jar-cli.jar"]
     stdin_open: true
     tty: true
     depends_on:
