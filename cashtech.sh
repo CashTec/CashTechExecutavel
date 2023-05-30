@@ -1,6 +1,6 @@
 #!/bin/bash
 
-COR='0;36'
+COR='36'
 NC='\033[0m'
 VERSAO=17
 
