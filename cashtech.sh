@@ -58,6 +58,7 @@ else
 	echo "$(tput setaf $COR)[CashTech assistant]:$(tput setaf 7) Preparando para instalar o Docker."
 	sudo apt install docker.io
 	echo "$(tput setaf $COR)[CashTech assistant]:$(tput setaf 7) Iniciando o serviço do Docker."
+	sleep 5
 	sudo service docker start
 	sudo systemctl start docker
 	sudo systemctl enable docker
