@@ -84,12 +84,12 @@ read tipo
 if [ \"$tipo\" == \"1\" ]; then
 	echo "$(tput setaf $COR)[CashTech assistant]:$(tput setaf 7)  Ok! Você escolheu instalar com interface gráfica ;D"
 	echo "$(tput setaf $COR)[CashTech assistant]:$(tput setaf 7) Baixando o executavel....."
-	wget https://github.com/CashTec/CashTechExecutavel/raw/main/cashtech-jar-gui.jar
+	sudo wget https://github.com/CashTec/CashTechExecutavel/raw/main/cashtech-jar-gui.jar
 	jar='./cashtech-jar-gui.jar'
 else
 	echo "$(tput setaf $COR)[CashTech assistant]:$(tput setaf 7)  Ok! Você escolheu instalar com command line ;D"
 	echo "$(tput setaf $COR)[CashTech assistant]:$(tput setaf 7) Baixando o executavel....."
-	wget https://github.com/CashTec/CashTechExecutavel/raw/main/cashtech-jar-cli.jar
+	sudo wget https://github.com/CashTec/CashTechExecutavel/raw/main/cashtech-jar-cli.jar
 	jar='./cashtech-jar-cli.jar'
 fi
 echo "$(tput setaf $COR)[CashTech assistant]:$(tput setaf 7) Aplicação baixada com sucesso!"
