@@ -27,7 +27,7 @@ else
 		clear
 
 		if [ $VERSAO -eq 17 ]; then
-			echo "$(tput setaf $COR)[CashTech assistant]:$(tput setaf 7) Preparando para instalar a versão 17 do Java. Confirme a instalação quando solicitado ;D"
+			echo "$(tput setaf $COR)[CashTech assistant]:$(tput setaf 7) Preparando para instalar a versão 17 do Java."
 			sleep 2
 			sudo apt install openjdk-17-jdk -y
 			echo "$(tput setaf $COR)[CashTech assistant]:$(tput setaf 7) Java instalado com sucesso!"
