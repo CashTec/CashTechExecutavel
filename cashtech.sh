@@ -4,7 +4,10 @@ COR='36'
 NC='\033[0m'
 VERSAO=17
 
-echo "$(tput setaf $COR)[CashTech assistant]:$(tput setaf 7) Olá Aluno, serei seu assistente para instalação do Java!;"
+echo "$(tput setaf $COR)[CashTech assistant]:$(tput setaf 7) Olá! Serei seu assistente para instalação do Java!;"
+echo "$(tput setaf $COR)[CashTech assistant]:$(tput setaf 7) Atualizando pacotes...?"
+sleep 1
+sudo apt update && sudo apt upgrade -y
 echo "$(tput setaf $COR)[CashTech assistant]:$(tput setaf 7)  Verificando aqui se você possui o Java instalado...;"
 sleep 2
 
@@ -20,7 +23,6 @@ else
 		echo "$(tput setaf $COR)[CashTech assistant]:$(tput setaf 7)  Adicionando o repositório!"
 		sleep 2
 		sudo add-apt-repository ppa:webupd8team/java -y
-		clear
 		echo "$(tput setaf $COR)[CashTech assistant]:$(tput setaf 7)  Atualizando! Quase lá."
 		sleep 2
 		sudo apt update -y
