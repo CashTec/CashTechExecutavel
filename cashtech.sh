@@ -92,6 +92,9 @@ else
 	sudo wget https://github.com/CashTec/CashTechExecutavel/raw/main/cashtech-jar-cli.jar
 	jar='sudo java -jar cashtech-jar-cli.jar'
 fi
+
+sudo chmod 777 cashtech-jar*.jar
+
 echo "$(tput setaf $COR)[CashTech assistant]:$(tput setaf 7) Aplicação baixada com sucesso!"
 
 sleep 2
