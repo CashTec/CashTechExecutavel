@@ -24,6 +24,7 @@ else
 		echo "$(tput setaf $COR)[CashTech assistant]:$(tput setaf 7)  Adicionando o repositório!"
 		sleep 2
 		sudo add-apt-repository ppa:webupd8team/java -y
+		clear
 		echo "$(tput setaf $COR)[CashTech assistant]:$(tput setaf 7)  Atualizando! Quase lá."
 		sleep 2
 		sudo apt update -y
@@ -53,7 +54,6 @@ else
 	echo "$(tput setaf $COR)[CashTech assistant]:$(tput setaf 7)  Opa! Não identifiquei nenhuma versão do Docker, irei resolver isso agora!"
 	echo "$(tput setaf $COR)[CashTech assistant]:$(tput setaf 7)  Ok! começando processo de instalação"
 	sleep 2
-	clear
 	echo "$(tput setaf $COR)[CashTech assistant]:$(tput setaf 7)  Atualizando! Quase lá."
 	sleep 2
 	sudo apt update -y
