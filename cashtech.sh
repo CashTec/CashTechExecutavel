@@ -5,7 +5,8 @@ NC='\033[0m'
 VERSAO=17
 
 echo "$(tput setaf $COR)[CashTech assistant]:$(tput setaf 7) Olá! Serei seu assistente para instalação do Java!;"
-echo "$(tput setaf $COR)[CashTech assistant]:$(tput setaf 7) Atualizando pacotes...?"
+sleep 2
+echo "$(tput setaf $COR)[CashTech assistant]:$(tput setaf 7) Atualizando pacotes..."
 sleep 1
 sudo apt update && sudo apt upgrade -y
 echo "$(tput setaf $COR)[CashTech assistant]:$(tput setaf 7)  Verificando aqui se você possui o Java instalado...;"
