@@ -7,7 +7,7 @@ VERSAO=17
 echo "$(tput setaf $COR)[CashTech assistant]:$(tput setaf 7) Olá! Serei seu assistente para instalação do Java!;"
 sleep 2
 echo "$(tput setaf $COR)[CashTech assistant]:$(tput setaf 7) Atualizando pacotes..."
-sleep 1
+sleep 2
 sudo apt update && sudo apt upgrade -y
 echo "$(tput setaf $COR)[CashTech assistant]:$(tput setaf 7)  Verificando aqui se você possui o Java instalado...;"
 sleep 2
@@ -49,7 +49,7 @@ sleep 2
 docker --version
 if [ $? -eq 0 ]; then
 	echo "$(tput setaf $COR)[CashTech assistant]:$(tput setaf 7) : Você já tem o docker instalado!"
-	sleep 2
+	sleep 3
 else
 	echo "$(tput setaf $COR)[CashTech assistant]:$(tput setaf 7)  Opa! Não identifiquei nenhuma versão do Docker, irei resolver isso agora!"
 	echo "$(tput setaf $COR)[CashTech assistant]:$(tput setaf 7)  Começando processo de instalação"
@@ -100,4 +100,5 @@ sleep 2
 clear
 
 echo "$(tput setaf $COR)[CashTech assistant]:$(tput setaf 7) Iniciando a execução da aplicação"
+sleep 3
 $jar
