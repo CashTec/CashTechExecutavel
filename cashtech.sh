@@ -99,4 +99,4 @@ sleep 2
 clear
 
 echo "$(tput setaf $COR)[CashTech assistant]:$(tput setaf 7) Iniciando a execução da aplicação"
-java -jar $jar
+sudo java -jar $jar
