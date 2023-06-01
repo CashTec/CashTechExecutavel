@@ -52,13 +52,8 @@ if [ $? -eq 0 ]; then
 	sleep 2
 else
 	echo "$(tput setaf $COR)[CashTech assistant]:$(tput setaf 7)  Opa! Não identifiquei nenhuma versão do Docker, irei resolver isso agora!"
-	echo "$(tput setaf $COR)[CashTech assistant]:$(tput setaf 7)  Ok! começando processo de instalação"
-	sleep 2
-	echo "$(tput setaf $COR)[CashTech assistant]:$(tput setaf 7)  Atualizando! Quase lá."
-	sleep 2
-	sudo apt update -y
-	clear
-	echo "$(tput setaf $COR)[CashTech assistant]:$(tput setaf 7) Preparando para instalar o Docker."
+	echo "$(tput setaf $COR)[CashTech assistant]:$(tput setaf 7)  Começando processo de instalação"
+	sleep 3
 	sudo apt install docker.io -y
 	echo "$(tput setaf $COR)[CashTech assistant]:$(tput setaf 7) Iniciando o serviço do Docker."
 	sleep 5
